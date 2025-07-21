@@ -4,30 +4,30 @@ This project implements an **Apache Airflow** data pipeline that monitors London
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 project-root/
 ├── config/ # Configuration files (optional, e.g., .env)
 ├── dags/
-│ └── daily_weather_dag.py # 🌀 Main Airflow DAG with the full pipeline
+│ └── daily_weather_dag.py # Main Airflow DAG with the full pipeline
 ├── logs/ # Airflow task logs
 ├── docker-compose.yaml # Docker setup for Airflow services
 └── .DS_Store # macOS system file (can be ignored)
 
 
-> ✅ All DAG logic is contained in `dags/daily_weather_dag.py`.
+>  All DAG logic is contained in `dags/daily_weather_dag.py`.
 
 ---
 
 ## 🚀 Features
 
-- ⏰ **Hourly API requests** to Open-Meteo for current weather in London.
-- 📦 **CSV-based staging** of hourly and daily summaries inside the container.
-- 📊 **Daily summaries**: min/max temperatures, average wind speed, and rain detection.
-- 🚨 **Extreme weather alerts**: checks for high temperatures, rain, snow, and storms.
-- 🗃️ **Data persistence**: Loads clean weather data into MySQL tables.
-- 🔁 **Runs hourly** with a built-in scheduler (Airflow).
-- 🐳 **Docker-compatible** for easy orchestration.
+- **Hourly API requests** to Open-Meteo for current weather in London.
+- **CSV-based staging** of hourly and daily summaries inside the container.
+- **Daily summaries**: min/max temperatures, average wind speed, and rain detection.
+- **Extreme weather alerts**: checks for high temperatures, rain, snow, and storms.
+- **Data persistence**: Loads clean weather data into MySQL tables.
+- **Runs hourly** with a built-in scheduler (Airflow).
+- **Docker-compatible** for easy orchestration.
 
 ---
 
@@ -103,14 +103,6 @@ weather_summary
 date, min_temp, max_temp, avg_wind_speed, rain_expected
 Note: Tables are created automatically if they don't exist (via SQLAlchemy).
 
-📌 New in This Version
-✅ Added 3 DAG tasks:
-summarize_weather
-check_extreme_weather
-load_to_mysql
-✅ Complete inline alerting logic
-✅ Local file persistence in /tmp
-✅ Enhanced logging and error handling
 
 🔮 Future Improvements
 Email/Slack alerts for extreme weather
