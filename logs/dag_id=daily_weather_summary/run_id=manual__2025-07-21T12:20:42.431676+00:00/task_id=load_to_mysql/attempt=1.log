@@ -1,0 +1,4 @@
+{"timestamp":"2025-07-21T12:20:46.648690","level":"info","event":"DAG bundles loaded: dags-folder","logger":"airflow.dag_processing.bundles.manager.DagBundlesManager"}
+{"timestamp":"2025-07-21T12:20:46.650565","level":"info","event":"Filling up the DagBag from /opt/airflow/dags/daily_weather_dag.py","logger":"airflow.models.dagbag.DagBag"}
+{"timestamp":"2025-07-21T12:20:47.205563Z","level":"info","event":"An error occurred: 2003 (HY000): Can't connect to MySQL server on 'localhost:3306' (111)","chan":"stdout","logger":"task"}
+{"timestamp":"2025-07-21T12:20:47.171686","level":"info","event":"Done. Returned value was: None","logger":"airflow.task.operators.airflow.providers.standard.operators.python.PythonOperator"}
