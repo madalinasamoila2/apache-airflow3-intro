@@ -2,7 +2,7 @@
 
 This project implements an **Apache Airflow** data pipeline that monitors London's weather conditions using the **Open-Meteo API**. The pipeline extracts hourly weather data, summarizes daily statistics, checks for extreme conditions, and loads the results into a **MySQL** database for long-term storage and analysis.
 
-<img width="366" height="635" alt="Screenshot 2025-07-22 at 11 44 17" src="https://github.com/user-attachments/assets/79220eba-6165-4565-94b0-ac4b89e71f22" />
+<img width="166" height="435" alt="Screenshot 2025-07-22 at 11 44 17" src="https://github.com/user-attachments/assets/79220eba-6165-4565-94b0-ac4b89e71f22" />
 
 ---
 ## Project Structure
