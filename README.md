@@ -1,10 +1,16 @@
-# 🌤️ Daily Weather Monitor – Airflow Pipeline
+# Daily Weather Monitor - Airflow Pipeline
 
 This project implements an **Apache Airflow** data pipeline that monitors London's weather conditions using the **Open-Meteo API**. The pipeline extracts hourly weather data, summarizes daily statistics, checks for extreme conditions, and loads the results into a **MySQL** database for long-term storage and analysis.
 
 ---
 
 ## Project Structure
+This project is designed to run on your local machine using Docker. Airflow, MySQL, and supporting services are containerised via docker-compose.yaml, and require your host machine to be accessible via host.docker.internal.
+
+You’ll need:
+Docker & Docker Compose installed
+A MySQL instance running locally (or use the one defined in your docker-compose.yaml)
+Airflow will connect to your local MySQL using host.docker.internal
 
 project-root/
 ├── config/ # Configuration files (optional, e.g., .env)
