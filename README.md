@@ -12,13 +12,7 @@ Docker & Docker Compose installed
 A MySQL instance running locally (or use the one defined in your docker-compose.yaml)
 Airflow will connect to your local MySQL using host.docker.internal
 
-project-root/
-├── config/ # Configuration files (optional, e.g., .env)
-├── dags/
-│ └── daily_weather_dag.py # Main Airflow DAG with the full pipeline
-├── logs/ # Airflow task logs
-├── docker-compose.yaml # Docker setup for Airflow services
-└── .DS_Store # macOS system file (can be ignored)
+<img width="510" height="334" alt="image" src="https://github.com/user-attachments/assets/f8b93203-3ea2-4500-b8e5-9b4b8486248c" />
 
 
 >  All DAG logic is contained in `dags/daily_weather_dag.py`.
