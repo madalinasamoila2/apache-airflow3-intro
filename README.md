@@ -6,48 +6,7 @@ This project implements an **Apache Airflow** data pipeline that monitors London
 
 ---
 ## Project Structure
-+--------------------+
-|   Your Host Machine |  <-- Code editing, run Docker, launch Airflow
-+--------------------+
-           │
-           │
-    +---------------------+
-    |     Docker Engine    |  <-- Manages containers
-    +---------------------+
-           │
-           │
-    +-----------------------------+
-    |      Docker Containers       |  
-    +-----------------------------+
-    |                             |
-    |   +----------------------+  |
-    |   |  Airflow Container   |  |  
-    |   |                      |  |      
-    |   |  [Open-Meteo API]    |  |
-    |   |        ↓ (Hourly Request)     |
-    |   |  [Extract & Transform Task]   |
-    |   |        ↓ (Save CSV: hourly_summary_YYYY-MM-DD.csv)  |
-    |   |  [Summarize Daily Task]       |
-    |   |        ↓ (Save CSV: daily_summary_YYYY_MM_DD.csv)   |
-    |   |  [Check Alerts Task]           |
-    |   |        ↓ (Optional alerts/logs)                      |
-    |   |  [Load to MySQL Task]          |
-    |   +----------------------+  |
-    |                             |
-    |   +----------------------+  |
-    |   |   MySQL Container    |  |  
-    |   |                      |  |  Stores data in:
-    |   |                      |  |   - weather_hourly  
-    |   |                      |  |   - weather_summary  
-    |   +----------------------+  |
-    |                             |
-    +-----------------------------+
-           │
-           │
-    +--------------------+
-    |  Weather API (Open- |
-    |  Meteo)             |
-    +--------------------+
+<img width="803" height="603" alt="Screenshot 2025-07-22 at 13 00 36" src="https://github.com/user-attachments/assets/388455af-efc8-4934-8652-bacb2dea0386" />
 
 >  All DAG logic is contained in `dags/daily_weather_dag.py`.
 
