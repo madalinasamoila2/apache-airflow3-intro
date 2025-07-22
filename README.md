@@ -20,13 +20,12 @@ Airflow will connect to your local MySQL using host.docker.internal
 
 ## DAG Tasks 
 
-- **Hourly API requests** to Open-Meteo for current weather in London.
-- **CSV-based staging** of hourly and daily summaries inside the container.
-- **Daily summaries**: min/max temperatures, average wind speed, and rain detection.
-- **Extreme weather alerts**: checks for high temperatures, rain, snow, and storms.
-- **Data persistence**: Loads clean weather data into MySQL tables.
-- **Runs hourly** with a built-in scheduler (Airflow).
-- **Docker-compatible** for easy orchestration.
+- **is_api_availables** to check if the API link works and is available
+- **extract_transform_weather** which extracts weather data hourly from the API, transforms it using necessary columns and stores the data in a temporary folder in docker
+- **summarise_daily_weather**:  summarizes daily min/max temperatures, average wind speed, and rain detection and stores the data in a temporary folder in docker
+- **check_extreme_weather**: checks for high temperatures, rain, snow, and storms and sends an alert message to docker to take precautions 
+- **load_to_mysql**: Loads clean weather data (hourly_summary/daily_summary) into MySQL tables and store into database for future use.
+- **DAG: simple_weather_to_csv** runs the DAG tasks alltogether using with a built-in scheduler (Airflow) using things like start date, schedule
 
 ---
 
