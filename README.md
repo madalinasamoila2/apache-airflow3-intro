@@ -32,18 +32,18 @@ Airflow will connect to your local MySQL using host.docker.internal
 
 ---
 
-## 🛠️ Prerequisites
+## 🛠️ Tools & Technologies
+Apache Airflow (workflow orchestration)
+Open-Meteo API (data source)
+Python + Pandas (ETL logic)
+MySQL (data storage)
+Docker & Docker Compose (local dev environment)
 
-- Python 3.8+
-- Docker + Docker Compose
-- Apache Airflow 2.7+ (via Docker or manual)
-- MySQL server with a database named `apache_weather_data`
-- Python packages:
-  - `requests`
-  - `pandas`
-  - `sqlalchemy`
-  - `mysql-connector-python`
-  - `python-dotenv`
+- Apache Airflow (workflow orchestration)
+- Open-Meteo API (data source)
+- Python + Pandas (ETL logic)
+- MySQL (data storage)
+- Docker & Docker Compose (local dev environment)
 
 ---
 
