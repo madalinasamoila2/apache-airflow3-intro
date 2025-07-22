@@ -12,7 +12,7 @@ Docker & Docker Compose installed
 A MySQL instance running locally (or use the one defined in your docker-compose.yaml)
 Airflow will connect to your local MySQL using host.docker.internal
 
-<img width="200" height="85" alt="image" src="https://github.com/user-attachments/assets/f8b93203-3ea2-4500-b8e5-9b4b8486248c" />
+<img width="200" height="115" alt="image" src="https://github.com/user-attachments/assets/f8b93203-3ea2-4500-b8e5-9b4b8486248c" />
 
 
 >  All DAG logic is contained in `dags/daily_weather_dag.py`.
