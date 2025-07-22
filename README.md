@@ -3,7 +3,6 @@
 This project implements an **Apache Airflow** data pipeline that monitors London's weather conditions using the **Open-Meteo API**. The pipeline extracts hourly weather data, summarizes daily statistics, checks for extreme conditions, and loads the results into a **MySQL** database for long-term storage and analysis.
 
 ---
-
 ## Project Structure
 This project is designed to run on your local machine using Docker. Airflow, MySQL, and supporting services are containerised via docker-compose.yaml, and require your host machine to be accessible via host.docker.internal.
 
@@ -12,14 +11,14 @@ Docker & Docker Compose installed
 A MySQL instance running locally (or use the one defined in your docker-compose.yaml)
 Airflow will connect to your local MySQL using host.docker.internal
 
-<img width="200" height="115" alt="image" src="https://github.com/user-attachments/assets/f8b93203-3ea2-4500-b8e5-9b4b8486248c" />
+<img width="200" height="130" alt="image" src="https://github.com/user-attachments/assets/f8b93203-3ea2-4500-b8e5-9b4b8486248c" />
 
 
 >  All DAG logic is contained in `dags/daily_weather_dag.py`.
 
 ---
 
-## 🚀 DAG Tasks information
+## DAG Tasks 
 
 - **Hourly API requests** to Open-Meteo for current weather in London.
 - **CSV-based staging** of hourly and daily summaries inside the container.
