@@ -96,10 +96,10 @@ Note: Tables are created automatically if they don't exist (via SQLAlchemy).
 
 
 ## Future Improvements
--Email/Slack alerts for extreme weather
--Configurable cities (via Airflow Variables)
--Dashboard integration (Streamlit, etc.)
--CSV cleanup 
--Historical trend analysis
+- Email/Slack alerts for extreme weather
+- Configurable cities (via Airflow Variables)
+- Dashboard integration (Streamlit, etc.)
+- CSV cleanup 
+- Historical trend analysis
 
 
