@@ -25,7 +25,7 @@ project-root/
 
 ---
 
-## 🚀 Features
+## 🚀 DAG Tasks information
 
 - **Hourly API requests** to Open-Meteo for current weather in London.
 - **CSV-based staging** of hourly and daily summaries inside the container.
