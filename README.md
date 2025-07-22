@@ -84,21 +84,22 @@ The DAG defined in daily_weather_dag.py follows this task sequence:
 | `load_to_mysql`             | Loads hourly and summary data into MySQL database     |
 
 
-🗃️ MySQL Database Schema
+##  MySQL Database Schema
 You need to create a MySQL database named apache_weather_data with two tables:
 
 weather_hourly
 date, time, temperature, relative_humidity, wind_speed, rain, precipitation, weather_code, alerts
+
 weather_summary
 date, min_temp, max_temp, avg_wind_speed, rain_expected
 Note: Tables are created automatically if they don't exist (via SQLAlchemy).
 
 
-🔮 Future Improvements
+## Future Improvements
 Email/Slack alerts for extreme weather
 Configurable cities (via Airflow Variables)
-Dashboard integration (Streamlit, Metabase, etc.)
-CSV cleanup and rotation policy
+Dashboard integration (Streamlit, etc.)
+CSV cleanup 
 Historical trend analysis
-Support for Parquet files or cloud storage
+
 
