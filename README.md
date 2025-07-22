@@ -68,18 +68,10 @@ DAG ID: simple_weather_to_csv
 Either wait for hourly scheduling or trigger manually from the UI.
 
 
-⛓️ DAG Workflow Overview
+## ⛓️ DAG Workflow Overview
 The DAG defined in daily_weather_dag.py follows this task sequence:
 
-is_api_available
-       ↓
-extract_transform_weather
-       ↓
-summarize_weather
-       ↓
-check_extreme_weather
-       ↓
-load_to_mysql
+<img width="1212" height="164" alt="image" src="https://github.com/user-attachments/assets/9e7c3a5d-f568-475d-a420-8c6c8f2d8a1b" />
 
 
 6. 
