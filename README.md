@@ -6,7 +6,7 @@ This project implements an **Apache Airflow** data pipeline that monitors London
 
 ---
 ## Project Structure
-<img width="803" height="603" alt="Screenshot 2025-07-22 at 13 00 36" src="https://github.com/user-attachments/assets/388455af-efc8-4934-8652-bacb2dea0386" />
+<img width="703" height="503" alt="Screenshot 2025-07-22 at 13 00 36" src="https://github.com/user-attachments/assets/388455af-efc8-4934-8652-bacb2dea0386" />
 
 >  All DAG logic is contained in `dags/daily_weather_dag.py`.
 
