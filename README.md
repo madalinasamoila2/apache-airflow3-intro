@@ -6,16 +6,48 @@ This project implements an **Apache Airflow** data pipeline that monitors London
 
 ---
 ## Project Structure
-This project is designed to run on your local machine using Docker. Airflow, MySQL, and supporting services are containerised via docker-compose.yaml, and require your host machine to be accessible via host.docker.internal.
-
-
-You’ll need:
-Docker & Docker Compose installed
-A MySQL instance running locally (or use the one defined in your docker-compose.yaml)
-Airflow will connect to your local MySQL using host.docker.internal
-
-<img width="200" height="130" alt="image" src="https://github.com/user-attachments/assets/f8b93203-3ea2-4500-b8e5-9b4b8486248c" />
-
++--------------------+
+|   Your Host Machine |  <-- Code editing, run Docker, launch Airflow
++--------------------+
+           │
+           │
+    +---------------------+
+    |     Docker Engine    |  <-- Manages containers
+    +---------------------+
+           │
+           │
+    +-----------------------------+
+    |      Docker Containers       |  
+    +-----------------------------+
+    |                             |
+    |   +----------------------+  |
+    |   |  Airflow Container   |  |  
+    |   |                      |  |      
+    |   |  [Open-Meteo API]    |  |
+    |   |        ↓ (Hourly Request)     |
+    |   |  [Extract & Transform Task]   |
+    |   |        ↓ (Save CSV: hourly_summary_YYYY-MM-DD.csv)  |
+    |   |  [Summarize Daily Task]       |
+    |   |        ↓ (Save CSV: daily_summary_YYYY_MM_DD.csv)   |
+    |   |  [Check Alerts Task]           |
+    |   |        ↓ (Optional alerts/logs)                      |
+    |   |  [Load to MySQL Task]          |
+    |   +----------------------+  |
+    |                             |
+    |   +----------------------+  |
+    |   |   MySQL Container    |  |  
+    |   |                      |  |  Stores data in:
+    |   |                      |  |   - weather_hourly  
+    |   |                      |  |   - weather_summary  
+    |   +----------------------+  |
+    |                             |
+    +-----------------------------+
+           │
+           │
+    +--------------------+
+    |  Weather API (Open- |
+    |  Meteo)             |
+    +--------------------+
 
 >  All DAG logic is contained in `dags/daily_weather_dag.py`.
 
